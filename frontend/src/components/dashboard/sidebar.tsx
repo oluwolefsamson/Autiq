@@ -3,23 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/utils";
-import {
-    BarChart3,
-    Bot,
-    Inbox,
-    LayoutDashboard,
-    Settings2,
-    Users,
-} from "lucide-react";
-
-const navItems = [
-    { label: "Overview", href: "/dashboard", icon: LayoutDashboard },
-    { label: "Inbox", href: "/dashboard#inbox", icon: Inbox },
-    { label: "Automations", href: "/dashboard/automations", icon: Bot },
-    { label: "Leads", href: "/dashboard#leads", icon: Users },
-    { label: "Analytics", href: "/dashboard/analytics", icon: BarChart3 },
-    { label: "Settings", href: "/dashboard/settings", icon: Settings2 },
-];
+import { dashboardNavItems } from "./dashboard-nav";
 
 const Sidebar = () => {
     const pathname = usePathname();
@@ -36,7 +20,7 @@ const Sidebar = () => {
 
             <nav className="flex-1 px-3 py-4">
                 <ul className="space-y-1">
-                    {navItems.map((item) => {
+                    {dashboardNavItems.map((item) => {
                         const Icon = item.icon;
                         const isActive = item.href.includes("#")
                             ? pathname === "/dashboard"

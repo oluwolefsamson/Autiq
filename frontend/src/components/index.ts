@@ -18,6 +18,7 @@ import Providers from "./providers/providers";
 // dashboard
 import Sidebar from "./dashboard/sidebar";
 import DashboardNavbar from "./dashboard/dashboard-navbar";
+import DashboardMobileSidebar from "./dashboard/dashboard-mobile-sidebar";
 
 
 export {
@@ -36,4 +37,5 @@ export {
 
     Sidebar,
     DashboardNavbar,
+    DashboardMobileSidebar,
 };

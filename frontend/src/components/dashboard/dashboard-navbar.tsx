@@ -1,3 +1,4 @@
+import DashboardMobileSidebar from "./dashboard-mobile-sidebar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,12 +9,15 @@ const DashboardNavbar = () => {
     return (
         <header className="sticky top-0 z-20 flex flex-col gap-3 border-b border-border bg-background/90 px-4 py-3 backdrop-blur-sm lg:px-6">
             <div className="flex items-center justify-between gap-4">
-                <div className="space-y-1">
-                    <div className="flex items-center gap-2">
-                        <h1 className="text-base font-semibold tracking-tight">Dashboard</h1>
-                        <Badge variant="secondary" className="hidden sm:inline-flex">Live</Badge>
+                <div className="flex items-center gap-2">
+                    <DashboardMobileSidebar />
+                    <div className="space-y-1">
+                        <div className="flex items-center gap-2">
+                            <h1 className="text-base font-semibold tracking-tight">Dashboard</h1>
+                            <Badge variant="secondary" className="hidden sm:inline-flex">Live</Badge>
+                        </div>
+                        <p className="text-sm text-muted-foreground">Chats, email, leads.</p>
                     </div>
-                    <p className="text-sm text-muted-foreground">Chats, email, leads.</p>
                 </div>
 
                 <div className="flex items-center gap-2">
