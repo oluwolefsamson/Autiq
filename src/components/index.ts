@@ -6,6 +6,7 @@ import SignUpForm from "./auth/signup-form";
 import { Icons } from "./global/icons";
 import MaxWidthWrapper from "./global/max-width-wrapper";
 import AnimationContainer from "./global/animation-container";
+import PricingCards from "./pricing-cards";
 // navigation
 import Navbar from "./navigation/navbar";
 import Footer from "./navigation/footer";
@@ -17,12 +18,6 @@ import Providers from "./providers/providers";
 import Sidebar from "./dashboard/sidebar";
 import DashboardNavbar from "./dashboard/dashboard-navbar";
 
-// pricing
-import PricingCards from "./pricing-cards";
-
-// blog
-import Blogs from "./blog/blogs";
-
 
 export {
     SignInForm,
@@ -31,6 +26,7 @@ export {
     Icons,
     MaxWidthWrapper,
     AnimationContainer,
+    PricingCards,
     Navbar,
     Footer,
 
@@ -38,8 +34,4 @@ export {
 
     Sidebar,
     DashboardNavbar,
-
-    PricingCards,
-
-    Blogs,
 };

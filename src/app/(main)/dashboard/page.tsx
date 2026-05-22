@@ -1,31 +1,25 @@
 "use client"
 
-import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
+import { DashboardNavbar, Sidebar } from "@/components";
 import React from 'react'
-import { useClerk } from "@clerk/nextjs";
 
 const DashboardPage = () => {
 
-    const router = useRouter();
-
-    const { user, signOut } = useClerk();
-
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
-            <h1 className="text-xl font-medium">
-                Welcome {user?.firstName}!
-            </h1>
-            <p className="text-gray-500 mt-2">
-                You are signed in.
-            </p>
-            <div className="flex items-center justify-center gap-4 mt-4">
-                <Button onClick={() => router.push("/")} variant="outline">
-                    Back to home
-                </Button>
-                <Button onClick={() => signOut()}>
-                    Sign Out
-                </Button>
+        <div className="grid w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] h-screen">
+            <Sidebar />
+            <div className="flex flex-col">
+                <DashboardNavbar />
+                <main className="flex-1 overflow-auto p-4 md:p-6">
+                    <div className="flex flex-col items-center justify-center h-full">
+                        <h1 className="text-2xl font-bold text-foreground">
+                            Dashboard
+                        </h1>
+                        <p className="text-muted-foreground mt-2">
+                            Your dashboard UI is ready.
+                        </p>
+                    </div>
+                </main>
             </div>
         </div>
     )
