@@ -1,1 +1,0 @@
-// Actions removed - UI only mode
