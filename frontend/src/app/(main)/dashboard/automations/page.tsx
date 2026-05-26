@@ -41,7 +41,7 @@ const AutomationsPage = () => {
                 <DashboardNavbar />
                 <main className="flex-1 min-h-0 overflow-y-auto px-4 py-4 md:px-6 md:py-6 lg:px-8 lg:py-8">
                     <div className="mx-auto flex max-w-6xl flex-col gap-6">
-                        <Card className="border-border bg-[linear-gradient(135deg,rgba(168,85,247,0.08),rgba(236,72,153,0.04))]">
+                        <Card className="border-border/60 bg-muted/10 shadow-none">
                             <CardContent className="p-6 md:p-8">
                                 <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
                                     <div className="max-w-2xl space-y-4">
@@ -56,7 +56,7 @@ const AutomationsPage = () => {
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="grid gap-3 rounded-3xl border border-border bg-background/80 p-4 md:min-w-[280px]">
+                                    <div className="grid gap-3 rounded-3xl border border-border/60 bg-background/70 p-4 md:min-w-[280px]">
                                         <div className="flex items-center gap-3">
                                             <div className="rounded-2xl bg-fuchsia-500/10 p-3">
                                                 <Sparkles className="h-5 w-5 text-fuchsia-500" />
@@ -77,7 +77,7 @@ const AutomationsPage = () => {
                         </Card>
 
                         <section className="grid gap-4 md:grid-cols-3">
-                            <Card className="border-border">
+                            <Card className="border-border/60 bg-muted/10 shadow-none">
                                 <CardContent className="p-5">
                                     <div className="flex items-center justify-between">
                                         <div>
@@ -88,7 +88,7 @@ const AutomationsPage = () => {
                                     </div>
                                 </CardContent>
                             </Card>
-                            <Card className="border-border">
+                            <Card className="border-border/60 bg-muted/10 shadow-none">
                                 <CardContent className="p-5">
                                     <div className="flex items-center justify-between">
                                         <div>
@@ -174,7 +174,7 @@ const AutomationsPage = () => {
                             </Card>
                         </section>
 
-                        <Card className="border-border">
+                        <Card className="border-border/60 bg-muted/10 shadow-none">
                             <CardHeader>
                                 <CardTitle>Suggested next steps</CardTitle>
                                 <CardDescription>Small improvements that increase automation coverage.</CardDescription>

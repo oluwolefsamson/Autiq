@@ -1,29 +1,20 @@
-import { Icons, SignUpForm } from "@/components";
+import { SignUpForm } from "@/components";
 import Link from "next/link";
 
 const SignUpPage = () => {
     return (
-        <div className="flex flex-col items-start max-w-sm mx-auto h-dvh overflow-hidden pt-4 md:pt-20">
-            <div className="flex items-center w-full py-8 border-b border-border/80">
-                <Link href="/#home" className="flex items-center gap-x-2">
-                    <Icons.logo className="w-6 h-6" />
-                    <h1 className="text-lg font-medium">
-                        Autiq
-                    </h1>
-                </Link>
-            </div>
-
+        <div className="flex flex-col items-start h-full overflow-hidden text-white">
             <SignUpForm />
 
             <div className="flex flex-col items-start w-full">
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-neutral-400">
                     Create your account to configure your business profile, FAQs, and support channels.
                 </p>
             </div>
-            <div className="flex items-start mt-auto border-t border-border/80 py-6 w-full">
-                <p className="text-sm text-muted-foreground">
+            <div className="flex items-start mt-auto border-t border-white/10 py-6 w-full">
+                <p className="text-sm text-neutral-400">
                     Already have an account?{" "}
-                    <Link href="/auth/sign-in" className="text-primary">
+                    <Link href="/auth/sign-in" className="text-white underline decoration-white/40 underline-offset-4">
                         Sign in
                     </Link>
                 </p>

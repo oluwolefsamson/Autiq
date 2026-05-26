@@ -127,18 +127,18 @@ const BentoCard = ({
     <div
         key={name}
         className={cn(
-            "group relative col-span-3 flex flex-col justify-between border border-border/60 overflow-hidden rounded-xl",
-            "bg-black [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
+            "group relative col-span-3 flex flex-col justify-between border border-white/10 overflow-hidden rounded-xl",
+            "bg-neutral-950 [box-shadow:0_-20px_80px_-20px_rgba(255,255,255,0.08)_inset,0_20px_60px_rgba(0,0,0,0.35)]",
             className,
         )}
     >
         <div>{background}</div>
         <div className="pointer-events-none z-10 flex flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
-            <Icon className="h-12 w-12 origin-left text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75" />
-            <h3 className="text-xl font-semibold text-neutral-300">
+            <Icon className="h-12 w-12 origin-left text-neutral-300 transition-all duration-300 ease-in-out group-hover:scale-75" />
+            <h3 className="text-xl font-semibold text-white">
                 {name}
             </h3>
-            <p className="max-w-lg text-neutral-400">{description}</p>
+            <p className="max-w-lg text-neutral-300">{description}</p>
         </div>
 
         <div
@@ -151,7 +151,7 @@ const BentoCard = ({
                 <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Link>
         </div>
-        <div className="pointer-events-none absolute inset-0 transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
+        <div className="pointer-events-none absolute inset-0 transition-all duration-300 group-hover:bg-white/[.03]" />
     </div>
 );
 

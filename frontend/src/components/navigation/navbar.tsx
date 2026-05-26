@@ -41,16 +41,16 @@ const Navbar = () => {
 
     return (
         <header className={cn(
-            "sticky top-0 inset-x-0 h-14 w-full border-b border-transparent z-[99999] select-none",
-            scroll && "border-background/80 bg-background/40 backdrop-blur-md"
+            "sticky top-0 inset-x-0 h-14 w-full border-b border-transparent z-[99999] select-none bg-black",
+            scroll && "border-white/10 bg-black/80 backdrop-blur-md"
         )}>
             <AnimationContainer reverse delay={0.1} className="size-full">
                 <MaxWidthWrapper className="flex items-center justify-between">
                     <div className="flex items-center space-x-12">
                         <Link href="/#home">
-                            <span className="text-lg font-bold font-heading !leading-none">
-                                Autiq
-                            </span>
+                                <span className="text-lg font-bold font-heading !leading-none text-white">
+                                    Autiq
+                                </span>
                         </Link>
 
                         <NavigationMenu className="hidden lg:flex">
@@ -67,11 +67,11 @@ const Navbar = () => {
                                                     )}>
                                                         {link.title === "Features" && (
                                                             <li className="row-span-4 pr-2 relative rounded-lg overflow-hidden">
-                                                                <div className="absolute inset-0 !z-10 h-full w-[calc(100%-10px)] bg-[linear-gradient(to_right,rgb(38,38,38,0.5)_1px,transparent_1px),linear-gradient(to_bottom,rgb(38,38,38,0.5)_1px,transparent_1px)] bg-[size:1rem_1rem]"></div>
+                                                                <div className="absolute inset-0 !z-10 h-full w-[calc(100%-10px)] bg-[linear-gradient(to_right,rgb(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgb(255,255,255,0.08)_1px,transparent_1px)] bg-[size:1rem_1rem]"></div>
                                                                 <NavigationMenuLink asChild className="z-20 relative">
                                                                     <Link
                                                                         href="/"
-                                                                        className="flex h-full w-full select-none flex-col justify-end rounded-lg bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
+                                                                        className="flex h-full w-full select-none flex-col justify-end rounded-lg bg-gradient-to-b from-neutral-900 to-black p-4 no-underline outline-none focus:shadow-md"
                                                                     >
                                                                         <h6 className="mb-2 mt-4 text-lg font-medium">
                                                                             All Features
@@ -98,7 +98,7 @@ const Navbar = () => {
                                             </>
                                         ) : (
                                             <Link href={link.href} legacyBehavior passHref>
-                                                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                                     {link.title}
                                                 </NavigationMenuLink>
                                             </Link>
@@ -146,13 +146,13 @@ const ListItem = React.forwardRef<
                     )}
                     {...props}
                 >
-                    <div className="flex items-center space-x-2 text-neutral-300">
+                    <div className="flex items-center space-x-2 text-neutral-200">
                         <Icon className="h-4 w-4" />
-                        <h6 className="text-sm font-medium !leading-none">
+                        <h6 className="text-sm font-medium !leading-none text-white">
                             {title}
                         </h6>
                     </div>
-                    <p title={children! as string} className="line-clamp-1 text-sm leading-snug text-muted-foreground">
+                    <p title={children! as string} className="line-clamp-1 text-sm leading-snug text-neutral-400">
                         {children}
                     </p>
                 </Link>

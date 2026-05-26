@@ -33,7 +33,7 @@ const AnalyticsPage = () => {
                 <DashboardNavbar />
                 <main className="flex-1 min-h-0 overflow-y-auto px-4 py-4 md:px-6 md:py-6 lg:px-8 lg:py-8">
                     <div className="mx-auto flex max-w-6xl flex-col gap-6">
-                        <Card className="border-border bg-[linear-gradient(135deg,rgba(168,85,247,0.08),rgba(236,72,153,0.04))]">
+                        <Card className="border-border/60 bg-muted/10 shadow-none">
                             <CardContent className="p-6 md:p-8">
                                 <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                                     <div>
@@ -46,7 +46,7 @@ const AnalyticsPage = () => {
                                             Track how fast Autiq replies, how often it resolves conversations, and where leads come from.
                                         </p>
                                     </div>
-                                    <div className="grid gap-2 rounded-3xl border border-border bg-background/80 p-4 md:min-w-[240px]">
+                                    <div className="grid gap-2 rounded-3xl border border-border/60 bg-background/70 p-4 md:min-w-[240px]">
                                         <div className="flex items-center gap-3">
                                             <TrendingUp className="h-5 w-5 text-fuchsia-500" />
                                             <p className="text-sm font-medium">Overall trend: up</p>
@@ -59,7 +59,7 @@ const AnalyticsPage = () => {
 
                         <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                             {analytics.map((item) => (
-                                <Card key={item.label} className="border-border">
+                            <Card key={item.label} className="border-border/60 bg-muted/10 shadow-none">
                                     <CardContent className="p-5">
                                         <div className="flex items-start justify-between gap-4">
                                             <div>
@@ -77,7 +77,7 @@ const AnalyticsPage = () => {
                         </section>
 
                         <section className="grid gap-6 xl:grid-cols-[1fr_0.9fr]">
-                            <Card className="border-border">
+                            <Card className="border-border/60 bg-muted/10 shadow-none">
                                 <CardHeader>
                                     <CardTitle>Channel breakdown</CardTitle>
                                     <CardDescription>Where support work is happening.</CardDescription>
@@ -95,7 +95,7 @@ const AnalyticsPage = () => {
                                 </CardContent>
                             </Card>
 
-                            <Card className="border-border">
+                            <Card className="border-border/60 bg-muted/10 shadow-none">
                                 <CardHeader>
                                     <CardTitle>Customer intent</CardTitle>
                                     <CardDescription>What customers ask most often.</CardDescription>

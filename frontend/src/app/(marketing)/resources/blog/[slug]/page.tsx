@@ -1,14 +1,15 @@
 import React from 'react'
 import blogs from "@/utils/constants/blogs.json";
 interface Props {
-    params: {
+    params: Promise<{
         slug: string
-    }
+    }>
 }
 
-const BlogPage = ({ params }: Props) => {
+const BlogPage = async ({ params }: Props) => {
+    const { slug } = await params;
 
-    const blog = blogs.find((blog) => blog.slug === params.slug);
+    const blog = blogs.find((blog) => blog.slug === slug);
     return (
         <div className="flex flex-col items-center justify-center max-w-6xl mx-auto px-4 md:px-0 pb-80">
             <div className="flex flex-col items-center justify-center">

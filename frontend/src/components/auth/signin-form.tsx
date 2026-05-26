@@ -4,9 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Eye, EyeOff, LoaderIcon } from "lucide-react";
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from "sonner";
 import { Label } from "../ui/label";
+import { api } from "@/services/api";
+import { useLoginMutation } from "@/services/hooks/authentication";
+import { Icons } from "@/components";
 
 const SignInForm = () => {
 
@@ -16,6 +19,11 @@ const SignInForm = () => {
     const [password, setPassword] = useState<string>("");
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const loginMutation = useLoginMutation();
+
+    useEffect(() => {
+        router.prefetch("/dashboard");
+    }, [router]);
 
     const handleSignIn = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -27,12 +35,21 @@ const SignInForm = () => {
 
         setIsLoading(true);
 
-        // UI-only placeholder: simulate success
-        setTimeout(() => {
+        try {
+            await loginMutation.mutateAsync({ email, password });
+            api.setSessionCookie();
+            localStorage.setItem("autiq:onboarding:show", "1");
+            toast.success("Signed in successfully.");
+            window.location.assign("/dashboard");
+        } catch (error: any) {
+            toast.error(error?.response?.data?.message ?? "Failed to sign in.");
+        } finally {
             setIsLoading(false);
-            toast.success("Signed in (UI-only).");
-            router.push("/dashboard");
-        }, 600);
+        }
+    };
+
+    const handleGoogleSignIn = () => {
+        toast.info("Google sign-in is not wired to the backend yet.");
     };
 
     return (
@@ -40,6 +57,17 @@ const SignInForm = () => {
             <h2 className="text-2xl font-semibold">
                 Sign in
             </h2>
+
+            <Button type="button" variant="outline" className="w-full justify-center gap-2" onClick={handleGoogleSignIn}>
+                <Icons.google className="h-4 w-4" />
+                Continue with Google
+            </Button>
+
+            <div className="flex w-full items-center gap-3">
+                <div className="h-px flex-1 bg-border/80" />
+                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">or</span>
+                <div className="h-px flex-1 bg-border/80" />
+            </div>
 
             <form onSubmit={handleSignIn} className="w-full">
                 <div className="space-y-2 w-full">
@@ -75,7 +103,7 @@ const SignInForm = () => {
                 </div>
 
                 <div className="mt-6">
-                    <Button type="submit">
+                    <Button type="submit" disabled={isLoading || loginMutation.isPending}>
                         {isLoading ? <LoaderIcon className="w-4 h-4 animate-spin" /> : "Sign In"}
                     </Button>
                 </div>

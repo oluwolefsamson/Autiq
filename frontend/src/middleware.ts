@@ -1,7 +1,15 @@
 import { NextResponse } from "next/server";
 
 export default function middleware(req: Request) {
-    // Middleware simplified: no authentication enforcement (UI-only mode)
+    const url = new URL(req.url);
+    if (url.pathname.startsWith("/dashboard")) {
+        const hasSession = req.headers.get("cookie")?.includes("autiq-session=1");
+        if (!hasSession) {
+            url.pathname = "/auth/sign-in";
+            return NextResponse.redirect(url);
+        }
+    }
+
     return NextResponse.next();
 }
 

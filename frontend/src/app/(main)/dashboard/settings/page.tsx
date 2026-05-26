@@ -22,7 +22,7 @@ const SettingsPage = () => {
                 <DashboardNavbar />
                 <main className="flex-1 min-h-0 overflow-y-auto px-4 py-4 md:px-6 md:py-6 lg:px-8 lg:py-8">
                     <div className="mx-auto flex max-w-6xl flex-col gap-6">
-                        <Card className="border-border bg-[linear-gradient(135deg,rgba(168,85,247,0.08),rgba(236,72,153,0.04))]">
+                        <Card className="border-border/60 bg-muted/10 shadow-none">
                             <CardContent className="p-6 md:p-8">
                                 <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                                     <div>
@@ -39,7 +39,7 @@ const SettingsPage = () => {
                             </CardContent>
                         </Card>
 
-                        <Card className="border-border">
+                            <Card className="border-border/60 bg-muted/10 shadow-none">
                             <CardHeader>
                                 <CardTitle>Workspace status</CardTitle>
                                 <CardDescription>Quick details about your current configuration.</CardDescription>
@@ -63,7 +63,7 @@ const SettingsPage = () => {
                             </CardContent>
                         </Card>
 
-                        <Card className="border-border">
+                            <Card className="border-border/60 bg-muted/10 shadow-none">
                             <CardHeader>
                                 <CardTitle>Workspace settings</CardTitle>
                                 <CardDescription>Update the main configuration areas for your team.</CardDescription>

@@ -4,9 +4,9 @@ import { TextHoverEffect } from "@/components/ui/text-hover-effect"
 
 const Footer = () => {
     return (
-        <footer className="flex flex-col relative items-center justify-center border-t border-border pt-16 pb-8 md:pb-0 px-6 lg:px-8 w-full max-w-6xl mx-auto lg:pt-32 bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.white/8%),transparent)]">
+        <footer className="flex flex-col relative items-center justify-center border-t border-white/10 pt-16 pb-8 md:pb-0 px-6 lg:px-8 w-full max-w-6xl mx-auto lg:pt-32 bg-black bg-[radial-gradient(35%_128px_at_50%_0%,rgba(255,255,255,0.06),transparent)]">
 
-            <div className="absolute top-0 left-1/2 right-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-1.5 bg-foreground rounded-full"></div>
+            <div className="absolute top-0 left-1/2 right-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-1.5 bg-white rounded-full"></div>
 
             <div className="grid gap-8 xl:grid-cols-3 xl:gap-8 w-full">
 
@@ -15,7 +15,7 @@ const Footer = () => {
                         <div className="flex items-start">
                             <Icons.logo className="w-7 h-7" />
                         </div>
-                        <p className="text-muted-foreground mt-4 text-sm text-start">
+                        <p className="text-neutral-400 mt-4 text-sm text-start">
                             AI customer support for growing businesses.
                         </p>
                     </div>
@@ -28,24 +28,24 @@ const Footer = () => {
                                 <h3 className="text-base font-medium text-white">
                                     Product
                                 </h3>
-                                <ul className="mt-4 text-sm text-muted-foreground">
+                                <ul className="mt-4 text-sm text-neutral-400">
                                     <li className="mt-2">
-                                        <Link href="" className="hover:text-foreground transition-all duration-300">
+                                        <Link href="" className="hover:text-white transition-all duration-300">
                                             Features
                                         </Link>
                                     </li>
                                     <li className="mt-2">
-                                        <Link href="" className="hover:text-foreground transition-all duration-300">
+                                        <Link href="" className="hover:text-white transition-all duration-300">
                                             Pricing
                                         </Link>
                                     </li>
                                     <li className="mt-2">
-                                        <Link href="" className="hover:text-foreground transition-all duration-300">
+                                        <Link href="" className="hover:text-white transition-all duration-300">
                                             Testimonials
                                         </Link>
                                     </li>
                                     <li className="mt-2">
-                                        <Link href="" className="hover:text-foreground transition-all duration-300">
+                                        <Link href="" className="hover:text-white transition-all duration-300">
                                             Integration
                                         </Link>
                                     </li>
@@ -57,24 +57,24 @@ const Footer = () => {
                                 <h3 className="text-base font-medium text-white">
                                     Integrations
                                 </h3>
-                                <ul className="mt-4 text-sm text-muted-foreground">
+                                <ul className="mt-4 text-sm text-neutral-400">
                                     <li className="">
-                                        <Link href="" className="hover:text-foreground transition-all duration-300">
+                                        <Link href="" className="hover:text-white transition-all duration-300">
                                             Facebook
                                         </Link>
                                     </li>
                                     <li className="mt-2">
-                                        <Link href="" className="hover:text-foreground transition-all duration-300">
+                                        <Link href="" className="hover:text-white transition-all duration-300">
                                             Instagram
                                         </Link>
                                     </li>
                                     <li className="mt-2">
-                                        <Link href="" className="hover:text-foreground transition-all duration-300">
+                                        <Link href="" className="hover:text-white transition-all duration-300">
                                             Twitter
                                         </Link>
                                     </li>
                                     <li className="mt-2">
-                                        <Link href="" className="hover:text-foreground transition-all duration-300">
+                                        <Link href="" className="hover:text-white transition-all duration-300">
                                             LinkedIn
                                         </Link>
                                     </li>
@@ -88,7 +88,7 @@ const Footer = () => {
                                 <h3 className="text-base font-medium text-white">
                                     Resources
                                 </h3>
-                                <ul className="mt-4 text-sm text-muted-foreground">
+                                <ul className="mt-4 text-sm text-neutral-400">
                                     <li className="mt-2">
                                         <Link href="/resources/blog" className="hover:text-foreground transition-all duration-300">
                                             Blog
@@ -107,7 +107,7 @@ const Footer = () => {
                                 <h3 className="text-base font-medium text-white">
                                     Company
                                 </h3>
-                                <ul className="mt-4 text-sm text-muted-foreground">
+                                <ul className="mt-4 text-sm text-neutral-400">
                                     <li className="">
                                         <Link href="" className="hover:text-foreground transition-all duration-300">
                                             About Us
@@ -133,7 +133,7 @@ const Footer = () => {
 
             <div className="mt-8 border-t border-border/40 pt-4 md:pt-8 md:flex md:items-center md:justify-between w-full">
                 <AnimationContainer delay={0.6}>
-                    <p className="text-sm text-muted-foreground mt-8 md:mt-0">
+                        <p className="text-sm text-neutral-300 mt-8 md:mt-0">
                         &copy; {new Date().getFullYear()} Autiq. All rights reserved.
                     </p>
                 </AnimationContainer>

@@ -52,14 +52,25 @@ const DashboardMobileSidebar = () => {
                                             <Link
                                                 href={item.href}
                                                 className={cn(
-                                                    "flex items-center gap-3 rounded-xl px-3 py-3 text-sm transition-colors",
+                                                    "group flex items-center gap-3 rounded-xl px-3 py-3 text-sm transition-colors",
                                                     isActive
-                                                        ? "bg-muted text-foreground font-medium"
-                                                        : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                                                        ? "bg-muted font-medium"
+                                                        : "hover:bg-muted",
                                                 )}
                                             >
-                                                <Icon className="h-4 w-4 shrink-0" />
-                                                <span>{item.label}</span>
+                                                <Icon
+                                                    className={cn(
+                                                        "h-4 w-4 shrink-0",
+                                                        isActive ? "text-foreground" : "text-muted-foreground group-hover:text-foreground",
+                                                    )}
+                                                />
+                                                <span
+                                                    className={cn(
+                                                        isActive ? "text-foreground" : "text-muted-foreground group-hover:text-foreground",
+                                                    )}
+                                                >
+                                                    {item.label}
+                                                </span>
                                             </Link>
                                         </SheetClose>
                                     </li>

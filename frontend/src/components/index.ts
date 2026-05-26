@@ -19,6 +19,7 @@ import Providers from "./providers/providers";
 import Sidebar from "./dashboard/sidebar";
 import DashboardNavbar from "./dashboard/dashboard-navbar";
 import DashboardMobileSidebar from "./dashboard/dashboard-mobile-sidebar";
+import DashboardOnboardingModal from "./dashboard/dashboard-onboarding-modal";
 
 
 export {
@@ -38,4 +39,5 @@ export {
     Sidebar,
     DashboardNavbar,
     DashboardMobileSidebar,
+    DashboardOnboardingModal,
 };
