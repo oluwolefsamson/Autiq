@@ -1,8 +1,10 @@
 import axios from "axios";
 import { api } from "@/services/api";
 
+const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL ?? "https://autiq.onrender.com/api";
+
 const axiosInstance = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api",
+    baseURL: apiBaseUrl,
     withCredentials: true,
     headers: {
         "Content-Type": "application/json",

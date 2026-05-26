@@ -1,7 +1,9 @@
 "use server";
 
+const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL ?? "https://autiq.onrender.com/api";
+
 const getAuthStatus = async () => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api"}/auth/me`, {
+    const response = await fetch(`${apiBaseUrl}/auth/me`, {
         method: "GET",
         credentials: "include",
         headers: {

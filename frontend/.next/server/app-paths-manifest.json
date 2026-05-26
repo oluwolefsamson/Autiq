@@ -2,6 +2,6 @@
   "/(main)/dashboard/page": "app/(main)/dashboard/page.js",
   "/(marketing)/page": "app/(marketing)/page.js",
   "/(marketing)/resources/help/page": "app/(marketing)/resources/help/page.js",
-  "/(marketing)/changelog/page": "app/(marketing)/changelog/page.js",
-  "/auth/sign-in/page": "app/auth/sign-in/page.js"
+  "/auth/sign-in/page": "app/auth/sign-in/page.js",
+  "/(marketing)/changelog/page": "app/(marketing)/changelog/page.js"
 }
