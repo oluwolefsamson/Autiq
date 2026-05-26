@@ -10,6 +10,7 @@ import { Label } from "../ui/label";
 import { api } from "@/services/api";
 import { useLoginMutation } from "@/services/hooks/authentication";
 import { Icons } from "@/components";
+import { getFriendlyErrorMessage } from "@/services/errors";
 
 const SignInForm = () => {
 
@@ -42,7 +43,7 @@ const SignInForm = () => {
             toast.success("Signed in successfully.");
             window.location.assign("/dashboard");
         } catch (error: any) {
-            toast.error(error?.response?.data?.message ?? "Failed to sign in.");
+            toast.error(getFriendlyErrorMessage(error, "We couldn't sign you in. Please try again."));
         } finally {
             setIsLoading(false);
         }

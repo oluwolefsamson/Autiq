@@ -12,18 +12,6 @@
       "static/css/app/not-found.css",
       "static/chunks/app/not-found.js"
     ],
-    "/(marketing)/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/(marketing)/layout.css",
-      "static/chunks/app/(marketing)/layout.js"
-    ],
-    "/(marketing)/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/(marketing)/page.css",
-      "static/chunks/app/(marketing)/page.js"
-    ],
     "/auth/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -35,57 +23,6 @@
       "static/chunks/main-app.js",
       "static/css/app/auth/sign-in/page.css",
       "static/chunks/app/auth/sign-in/page.js"
-    ],
-    "/(main)/dashboard/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(main)/dashboard/loading.js"
-    ],
-    "/(main)/dashboard/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/(main)/dashboard/page.css",
-      "static/chunks/app/(main)/dashboard/page.js"
-    ],
-    "/(main)/dashboard/automations/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/(main)/dashboard/automations/page.css",
-      "static/chunks/app/(main)/dashboard/automations/page.js"
-    ],
-    "/features/link-shortening/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/features/link-shortening/page.css",
-      "static/chunks/app/features/link-shortening/page.js"
-    ],
-    "/features/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/features/layout.css",
-      "static/chunks/app/features/layout.js"
-    ],
-    "/(marketing)/pricing/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/(marketing)/pricing/page.css",
-      "static/chunks/app/(marketing)/pricing/page.js"
-    ],
-    "/(marketing)/enterprise/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/enterprise/page.js"
-    ],
-    "/(marketing)/resources/help/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/(marketing)/resources/help/page.css",
-      "static/chunks/app/(marketing)/resources/help/page.js"
-    ],
-    "/(marketing)/changelog/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/changelog/page.js"
     ]
   }
 }

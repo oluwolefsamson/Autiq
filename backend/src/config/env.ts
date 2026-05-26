@@ -11,7 +11,7 @@ const envSchema = z.object({
   JWT_REFRESH_SECRET: z.string().min(16),
   JWT_ACCESS_EXPIRES_IN: z.string().default("15m"),
   JWT_REFRESH_EXPIRES_IN: z.string().default("30d"),
-  CLIENT_URL: z.string().url().or(z.string().min(1)),
+  CLIENT_URLS: z.string().min(1).default("http://localhost:3000,https://autiq-khaki.vercel.app"),
   SMTP_HOST: z.string().optional().default(""),
   SMTP_PORT: z.coerce.number().optional().default(587),
   SMTP_USER: z.string().optional().default(""),
@@ -21,3 +21,6 @@ const envSchema = z.object({
 });
 
 export const env = envSchema.parse(process.env);
+export const allowedClientOrigins = env.CLIENT_URLS.split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);

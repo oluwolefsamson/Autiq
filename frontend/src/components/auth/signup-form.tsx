@@ -12,6 +12,7 @@ import { Label } from "../ui/label";
 import { api } from "@/services/api";
 import { useRegisterMutation } from "@/services/hooks/authentication";
 import { Icons } from "@/components";
+import { getFriendlyErrorMessage } from "@/services/errors";
 
 const SignUpForm = () => {
 
@@ -48,7 +49,7 @@ const SignUpForm = () => {
             toast.success("Account created successfully.");
             window.location.assign("/dashboard");
         } catch (error: any) {
-            toast.error(error?.response?.data?.message ?? "Failed to create account.");
+            toast.error(getFriendlyErrorMessage(error, "We couldn't create your account. Please try again."));
         } finally {
             setIsUpdating(false);
         }

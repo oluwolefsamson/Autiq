@@ -33,7 +33,7 @@ axiosInstance.interceptors.response.use(
         if (error?.response?.status === 401) {
             api.removeCookie("token");
             api.removeCookie("temp_token");
-            return Promise.reject(new Error("Unauthorized or Session Expired. Redirecting to login."));
+            error.message = "Your session has expired. Please sign in again.";
         }
 
         return Promise.reject(error);

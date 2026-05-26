@@ -2,7 +2,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import express from "express";
 import helmet from "helmet";
-import { env } from "@/config/env";
+import { allowedClientOrigins } from "@/config/env";
 import { apiLimiter } from "@/middlewares/rate-limit.middleware";
 import { errorMiddleware } from "@/middlewares/error.middleware";
 import { notFound } from "@/middlewares/not-found.middleware";
@@ -21,7 +21,14 @@ export const app = express();
 app.use(helmet());
 app.use(
   cors({
-    origin: env.CLIENT_URL,
+    origin: (origin, callback) => {
+      if (!origin || allowedClientOrigins.includes(origin)) {
+        callback(null, true);
+        return;
+      }
+
+      callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   }),
 );

@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu } from "lucide-react";
+import { LogOut, Menu } from "lucide-react";
 import { dashboardNavItems } from "./dashboard-nav";
 import { cn } from "@/utils";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+import { api } from "@/services/api";
+import { useLogoutMutation } from "@/services/hooks/authentication";
 import {
     Sheet,
     SheetClose,
@@ -17,6 +20,17 @@ import {
 
 const DashboardMobileSidebar = () => {
     const pathname = usePathname();
+    const logoutMutation = useLogoutMutation();
+
+    const handleLogout = async () => {
+        try {
+            await logoutMutation.mutateAsync();
+        } finally {
+            api.clearSessionCookie();
+            toast.success("Signed out.");
+            window.location.assign("/auth/sign-in");
+        }
+    };
 
     return (
         <div className="md:hidden">
@@ -27,7 +41,7 @@ const DashboardMobileSidebar = () => {
                         <span className="sr-only">Open navigation menu</span>
                     </Button>
                 </SheetTrigger>
-                <SheetContent side="left" className="w-[280px] p-0">
+                <SheetContent side="left" className="flex h-full w-[280px] flex-col p-0">
                     <SheetHeader className="border-b border-border px-5 py-5 text-left">
                         <SheetTitle className="flex items-center gap-3">
                             <span className="h-9 w-9 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500" />
@@ -78,6 +92,19 @@ const DashboardMobileSidebar = () => {
                             })}
                         </ul>
                     </nav>
+
+                    <div className="mt-auto border-t border-border px-3 py-4">
+                        <Button
+                            type="button"
+                            variant="ghost"
+                            className="w-full justify-start gap-3 rounded-xl px-3 text-sm"
+                            onClick={handleLogout}
+                            disabled={logoutMutation.isPending}
+                        >
+                            <LogOut className="h-4 w-4" />
+                            Sign out
+                        </Button>
+                    </div>
                 </SheetContent>
             </Sheet>
         </div>
