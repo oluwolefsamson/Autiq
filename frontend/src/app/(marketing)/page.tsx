@@ -10,6 +10,7 @@ import { REVIEWS } from "@/utils/constants/misc";
 import { ArrowRightIcon, CreditCardIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
 import AuthAwareLink from "@/components/auth/auth-aware-link";
+import StoreCTAButton from "@/components/global/store-cta-button";
 
 const HomePage = () => {
 
@@ -17,63 +18,100 @@ const HomePage = () => {
         <div className="overflow-x-hidden scrollbar-hide size-full bg-black text-white">
             {/* Hero Section */}
             <MaxWidthWrapper>
-                <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-black via-black to-neutral-950">
-                    <AnimationContainer className="flex flex-col items-center justify-center w-full text-center">
-                        <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200">
-                            <span>
-                                <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
-                            </span>
-                            <span className="backdrop absolute inset-[1px] rounded-full bg-black transition-colors duration-200 group-hover:bg-neutral-900" />
-                            <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-primary/20"></span>
-                            <span className="z-10 py-0.5 text-sm text-neutral-100 flex items-center justify-center gap-1">
-                                Built for businesses that miss leads after hours
-                                <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-                            </span>
-                        </button>
-                        <h1 className="text-white text-center py-6 text-5xl font-medium tracking-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] w-full font-heading">
-                            AI Customer Support with <span className="text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text inline-block">
-                                Speed
-                            </span>
-                        </h1>
-                        <p className="mb-12 text-lg tracking-tight text-neutral-300 md:text-xl text-balance">
-                            Autiq helps businesses respond to customer inquiries automatically across website chat and email.
-                            <br className="hidden md:block" />
-                            <span className="hidden md:block">Capture leads, answer FAQs, and reduce response time for every inquiry.</span>
-                        </p>
-                        <div className="flex items-center justify-center whitespace-nowrap gap-4 z-50">
-                            <Button asChild>
-                            <AuthAwareLink className="flex items-center">
-                                    Start automating support
-                                    <ArrowRightIcon className="w-4 h-4 ml-2" />
-                                </AuthAwareLink>
-                            </Button>
-                        </div>
-                    </AnimationContainer>
+                <section className="relative py-6 md:py-10">
+                    <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:justify-items-center lg:gap-8">
+                        <AnimationContainer className="relative z-10 max-w-xl text-left lg:text-center">
+                            <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium tracking-wide text-neutral-300">
+                                AI customer support for modern teams
+                            </div>
+                            <h1 className="mt-5 max-w-xl text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl md:text-6xl lg:text-6xl !leading-[1.02]">
+                                AI Customer Support with <span className="inline-block text-transparent bg-gradient-to-r from-lime-400 to-emerald-400 bg-clip-text">
+                                    Speed
+                                </span>
+                            </h1>
+                            <p className="mt-5 max-w-lg text-base leading-7 text-neutral-300 md:text-lg">
+                                Respond faster, capture leads, and stay available 24/7 without overloading your team.
+                            </p>
 
-                    <AnimationContainer delay={0.2} className="relative pt-20 pb-20 md:py-32 px-2 bg-transparent w-full">
-                        <div className="absolute md:top-[10%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[5rem] animate-image-glow"></div>
-                        <div className="-m-2 rounded-xl p-2 ring-1 ring-inset ring-foreground/20 lg:-m-4 lg:rounded-2xl bg-opacity-50 backdrop-blur-3xl">
-                            <BorderBeam
-                                size={250}
-                                duration={12}
-                                colorFrom="#ff6bd6"
-                                colorTo="#8b5cf6"
-                                delay={9}
-                            />
-                            <Image
-                                src="/assets/dashboard-dark.png"
-                                alt="Dashboard"
-                                width={1200}
-                                height={1200}
-                                quality={100}
-                                className="rounded-md lg:rounded-xl bg-foreground/10 ring-1 ring-border"
-                            />
-                            <div className="absolute -bottom-4 inset-x-0 w-full h-1/2 bg-gradient-to-t from-black z-40"></div>
-                            <div className="absolute bottom-0 md:-bottom-8 inset-x-0 w-full h-1/4 bg-gradient-to-t from-black z-50"></div>
-                        </div>
-                    </AnimationContainer>
-                </div>
-            </MaxWidthWrapper >
+                            <div className="mt-8 flex flex-col items-start gap-4 lg:items-center">
+                                <div className="flex flex-wrap items-center justify-center gap-4">
+                                    <Button asChild>
+                                        <AuthAwareLink className="flex items-center">
+                                            Start automating support
+                                            <ArrowRightIcon className="ml-2 h-4 w-4" />
+                                        </AuthAwareLink>
+                                    </Button>
+                                    <Button variant="outline" asChild className="border-white/15 bg-white/5 text-white hover:bg-white/10">
+                                        <a href="#features">Learn more</a>
+                                    </Button>
+                                </div>
+
+                                <div className="flex flex-wrap justify-center gap-3">
+                                    <StoreCTAButton store="App Store" />
+                                    <StoreCTAButton store="Play Store" />
+                                </div>
+                            </div>
+                        </AnimationContainer>
+
+                        <AnimationContainer delay={0.2} className="relative z-10">
+                            <div className="relative flex w-full max-w-full flex-col gap-0 sm:max-w-[280px] sm:gap-3 lg:max-w-[300px]">
+                                <div className="relative z-10 w-[88%] max-w-[300px] overflow-hidden rounded-[1rem] bg-white/5 p-1 shadow-[0_18px_40px_rgba(0,0,0,0.16)] ring-1 ring-white/10 sm:w-full">
+                                    <BorderBeam
+                                        size={220}
+                                        duration={12}
+                                        colorFrom="#22c55e"
+                                        colorTo="#14b8a6"
+                                        delay={9}
+                                    />
+                                    <Image
+                                        src="/assets/autiq-chat-cover.png"
+                                        alt="Autiq chat cover"
+                                        width={1280}
+                                        height={1280}
+                                        quality={100}
+                                        priority
+                                        className="h-full w-full rounded-[0.85rem] object-cover"
+                                    />
+                                </div>
+
+                                <div className="relative z-20 -mt-10 grid w-full justify-items-end gap-3 sm:mt-0 sm:grid-cols-[0.95fr_1.05fr] sm:items-start sm:justify-items-stretch">
+                                    <div className="relative z-20 -mt-6 justify-self-end ml-8 w-[64%] max-w-[220px] overflow-hidden rounded-[1rem] bg-white/5 p-1 shadow-[0_14px_30px_rgba(0,0,0,0.14)] ring-1 ring-white/10 sm:col-start-1 sm:row-start-1 sm:justify-self-auto sm:ml-0 sm:mt-0 sm:w-auto">
+                                        <BorderBeam
+                                            size={180}
+                                            duration={12}
+                                            colorFrom="#22c55e"
+                                            colorTo="#14b8a6"
+                                            delay={11}
+                                        />
+                                        <Image
+                                            src="/assets/autiq-hero-mobile.jpg"
+                                            alt="Autiq mobile chatbot preview"
+                                            width={900}
+                                            height={1200}
+                                            quality={100}
+                                            className="h-full w-full rounded-[0.85rem] object-cover"
+                                        />
+                                    </div>
+
+                                    <div className="justify-self-start rounded-[0.9rem] border border-white/10 bg-white/5 p-3 shadow-sm sm:col-start-2 sm:row-start-1 sm:justify-self-auto">
+                                        <div className="grid gap-4">
+                                            <div>
+                                                <p className="text-lg font-semibold text-white">Live chat</p>
+                                                <p className="mt-1 text-xs text-neutral-400">Talk to visitors in real time</p>
+                                            </div>
+                                            <div className="h-px w-full bg-white/10" />
+                                            <div>
+                                                <p className="text-lg font-semibold text-white">Lead capture</p>
+                                                <p className="mt-1 text-xs text-neutral-400">Turn conversations into customers</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </AnimationContainer>
+                    </div>
+                </section>
+            </MaxWidthWrapper>
 
             {/* Companies Section */}
             <MaxWidthWrapper>

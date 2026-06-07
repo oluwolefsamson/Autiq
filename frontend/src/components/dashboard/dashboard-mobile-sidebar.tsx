@@ -52,7 +52,7 @@ const DashboardMobileSidebar = () => {
                         </SheetTitle>
                     </SheetHeader>
 
-                    <nav className="px-3 py-4">
+                    <nav className="flex-1 overflow-y-auto px-3 py-4">
                         <ul className="space-y-1">
                             {dashboardNavItems.map((item) => {
                                 const Icon = item.icon;
@@ -93,17 +93,19 @@ const DashboardMobileSidebar = () => {
                         </ul>
                     </nav>
 
-                    <div className="mt-auto border-t border-border px-3 py-4">
-                        <Button
-                            type="button"
-                            variant="ghost"
-                            className="w-full justify-start gap-3 rounded-xl px-3 text-sm"
-                            onClick={handleLogout}
-                            disabled={logoutMutation.isPending}
-                        >
-                            <LogOut className="h-4 w-4" />
-                            Sign out
-                        </Button>
+                    <div className="shrink-0 border-t border-border bg-background px-3 py-4">
+                        <SheetClose asChild>
+                            <Button
+                                type="button"
+                                variant="ghost"
+                                className="w-full justify-start gap-3 rounded-xl px-3 text-sm font-medium text-destructive hover:bg-destructive/10 hover:text-destructive"
+                                onClick={handleLogout}
+                                disabled={logoutMutation.isPending}
+                            >
+                                <LogOut className="h-4 w-4" />
+                                Sign out
+                            </Button>
+                        </SheetClose>
                     </div>
                 </SheetContent>
             </Sheet>
